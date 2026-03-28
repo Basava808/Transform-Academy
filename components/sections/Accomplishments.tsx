@@ -1,0 +1,121 @@
+import { Trophy, Medal, Star } from "lucide-react";
+
+export default function Accomplishments() {
+  return (
+    <section id="accomplishments" className="py-32 px-6 md:px-12 bg-white text-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20 flex flex-col items-center">
+          <Trophy className="w-16 h-16 text-black mb-6" />
+          <h2 className="text-4xl md:text-5xl font-black mb-6 uppercase tracking-tighter">
+            PLAYER ACCOMPLISHMENTS
+          </h2>
+          <p className="text-xl max-w-3xl mx-auto font-light leading-relaxed text-gray-800">
+            Over the years, Transform Tennis Academy (TTA) has produced some of the most promising tennis players in the country. Our structured training programs and competitive environment have helped players achieve success at national and international levels.
+          </p>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="bg-gray-50 border border-gray-200 p-10 hover:bg-gray-100 transition-colors text-center">
+            <div className="text-6xl font-black text-black mb-4">60+</div>
+            <div className="text-2xl font-bold tracking-tight uppercase">Nationally Ranked Players</div>
+          </div>
+          <div className="bg-gray-50 border border-gray-200 p-10 hover:bg-gray-100 transition-colors text-center">
+            <div className="text-6xl font-black text-black mb-4">20+</div>
+            <div className="text-2xl font-bold tracking-tight uppercase">Internationally Ranked Players</div>
+          </div>
+        </div>
+
+        {/* Highlights 2025 */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-black mb-12 text-center border-b border-gray-300 pb-6 uppercase tracking-tight">Highlights – 2025</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* National Champions */}
+            <div className="bg-white p-8 border border-gray-200 shadow-sm border-t-4 border-t-black">
+              <h4 className="text-xl font-bold mb-6 flex items-center text-black uppercase tracking-wide">
+                <Medal className="w-6 h-6 mr-3" /> National Champions
+              </h4>
+              <ul className="space-y-4 font-normal text-gray-800">
+                <li className="flex flex-col border-b border-gray-100 pb-3">
+                  <span className="font-bold text-black">Gandharv Kothapalli</span>
+                  <span className="text-sm font-light text-gray-600">Boys U18 Nationals Winner</span>
+                </li>
+                <li className="flex flex-col border-b border-gray-100 pb-3">
+                  <span className="font-bold text-black">Harshini Nagaraj</span>
+                  <span className="text-sm font-light text-gray-600">Girls U18 Nationals Winner</span>
+                </li>
+                <li className="flex flex-col pt-1">
+                  <span className="font-bold text-black">Snigdha Kanta</span>
+                  <span className="text-sm font-light text-gray-600">Girls U18 Nationals Runner-Up</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* National Rankings */}
+            <div className="bg-white p-8 border border-gray-200 shadow-sm border-t-4 border-t-black max-h-[400px] overflow-y-auto custom-scrollbar">
+              <h4 className="text-xl font-bold mb-6 flex items-center text-black uppercase tracking-wide">
+                <Star className="w-6 h-6 mr-3" /> National Rankings
+              </h4>
+              <ul className="space-y-3 text-sm">
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Puneet M</span> <span className="text-orange-600 font-bold">No.1 (U14)</span></li>
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Arjun Manikandan</span> <span className="text-orange-600 font-bold">No.3 (U14)</span></li>
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Jahnavi Tammineedi</span> <span className="text-orange-600 font-bold">No.7 (U14)</span></li>
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Aradhya Kshitij</span> <span className="text-orange-600 font-bold">No.2 (U18)</span></li>
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Snigdha Kanta</span> <span className="text-orange-600 font-bold">No.5 (U18)</span></li>
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Harshini Nagaraj</span> <span className="text-orange-600 font-bold">No.8 (U18)</span></li>
+              </ul>
+            </div>
+
+            {/* International */}
+            <div className="bg-white p-8 border border-gray-200 shadow-sm border-t-4 border-t-black">
+              <h4 className="text-xl font-bold mb-6 flex items-center text-black uppercase tracking-wide">
+                <Trophy className="w-6 h-6 mr-3" /> International
+              </h4>
+              <ul className="space-y-4 font-normal text-gray-800">
+                <li className="flex flex-col border-b border-gray-100 pb-3">
+                  <span className="font-bold text-black">Aradhya Kshitij</span>
+                  <span className="text-xs text-orange-600 font-bold mb-1">World No.92 (Jan 2026)</span>
+                  <span className="text-sm font-light text-gray-600">ITF Junior J60 & J200 Winner</span>
+                </li>
+                <li className="flex flex-col border-b border-gray-100 pb-3">
+                  <span className="font-bold text-black">Snigdha Kanta</span>
+                  <span className="text-sm font-light text-gray-600">ITF Junior J60 Winner</span>
+                </li>
+                <li className="flex justify-between items-center pt-2">
+                  <span className="font-bold text-black">Puneet M</span>
+                  <span className="text-sm font-bold text-orange-600">Asian U14 Champ</span>
+                </li>
+                <li className="flex justify-between items-center pt-2">
+                  <span className="font-bold text-black">Madhav Dadhich</span>
+                  <span className="text-sm font-bold text-orange-600">Asian U16 Champ</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Featured Player Component Example */}
+        <div className="mt-16 max-w-4xl mx-auto bg-black text-white p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+          <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+            {/* Optional Placeholder for Gandharv Photo */}
+            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=400&h=400&auto=format&fit=crop" alt="Gandharv Kothapalli" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+          <div>
+            <div className="inline-block px-4 py-1.5 bg-white text-black text-xs font-bold tracking-widest uppercase mb-4">
+              Women's National Ranking
+            </div>
+            <h3 className="text-3xl md:text-4xl font-black mb-2 tracking-tight uppercase">Harshini Nagaraj</h3>
+            <p className="text-xl text-gray-300 mb-6 font-light">
+              Winner – ₹2.5 Lakh National Ranking Tournament
+            </p>
+            <p className="text-gray-400 font-light leading-relaxed">
+              These accomplishments reflect the commitment, discipline, and excellence that define the training philosophy at Transform Tennis Academy.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
