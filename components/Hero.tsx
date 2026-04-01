@@ -7,7 +7,7 @@ export default function Hero() {
         loop
         playsInline
         poster="/images/transform-tennis/Hero 1.jpeg"
-        className="absolute w-full h-full object-cover"
+        className="absolute w-full h-full object-contain"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
