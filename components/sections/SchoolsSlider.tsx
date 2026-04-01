@@ -6,17 +6,17 @@ const schools = [
   {
     title: "International School Curriculum",
     text: "Balance between sport and studies.",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/transform-tennis/Hero 3.jpeg",
   },
   {
     title: "French Programme",
     text: "French national curriculum.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/transform-tennis/Hero 4.jpeg",
   },
   {
     title: "American Programme",
     text: "International English curriculum.",
-    image: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?q=80&w=1000&auto=format&fit=crop ",
+    image: "/images/transform-tennis/Hero 5.jpeg",
   },
 ];
 

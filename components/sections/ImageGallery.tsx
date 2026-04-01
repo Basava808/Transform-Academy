@@ -1,104 +1,199 @@
 "use client";
 
-import React, { useState } from "react";
-
-/**
- * Simple responsive gallery + modal lightbox.
- * Put images in /public/images/gallery1.jpg ... gallery8.jpg
- */
+import React, { useState, useRef, useEffect } from "react";
 
 const IMAGES = [
- "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1595433562696-3d38a2d3a3e7?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop",
- "https://images.unsplash.com/photo-1502901930015-0eae532ad0c2?q=80&w=800&auto=format&fit=crop"
+  "/images/transform-tennis/Gallery 1.jpeg",
+  "/images/transform-tennis/Gallery 2.jpeg",
+  "/images/transform-tennis/Gallery 3.jpeg",
+  "/images/transform-tennis/Gallery 4.jpeg",
+  "/images/transform-tennis/Gallery 5.jpeg",
+  "/images/transform-tennis/Gallery 6.jpeg",
+  "/images/transform-tennis/Gallery 7.jpeg",
+  "/images/transform-tennis/Gallery 8.jpeg",
+  "/images/transform-tennis/Gallery alt 1.jpeg",
+  "/images/transform-tennis/Gallery alt 2.jpeg",
+  "/images/transform-tennis/Gallery alt 5.jpeg",
 ];
+
+function ScrollRow({
+  images,
+  indexOffset,
+  direction,
+  onImageClick,
+}: {
+  images: string[];
+  indexOffset: number;
+  direction: "left" | "right";
+  onImageClick: (idx: number) => void;
+}) {
+  const rowRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const el = rowRef.current;
+    if (!el) return;
+    let animFrame: number;
+    const speed = direction === "left" ? 0.5 : -0.5;
+
+    const scroll = () => {
+      if (!isPaused && el) {
+        el.scrollLeft += speed;
+        // Loop: if scrolled to end, reset to start (and vice versa)
+        if (direction === "left" && el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+          el.scrollLeft = 0;
+        }
+        if (direction === "right" && el.scrollLeft <= 0) {
+          el.scrollLeft = el.scrollWidth - el.clientWidth;
+        }
+      }
+      animFrame = requestAnimationFrame(scroll);
+    };
+
+    animFrame = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animFrame);
+  }, [isPaused, direction]);
+
+  return (
+    <div
+      ref={rowRef}
+      className="flex gap-2 overflow-x-auto scrollbar-hide"
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Duplicate images for seamless loop */}
+      {[...images, ...images].map((src, idx) => (
+        <button
+          key={`${src}-${idx}`}
+          onClick={() => onImageClick(indexOffset + (idx % images.length))}
+          className="flex-shrink-0 h-[250px] md:h-[320px] overflow-hidden block focus:outline-none"
+          style={{ width: "clamp(200px, 30vw, 400px)" }}
+          aria-label={`Open image ${indexOffset + (idx % images.length) + 1}`}
+        >
+          <img
+            src={src}
+            alt={`Gallery ${indexOffset + (idx % images.length) + 1}`}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export default function ImageGallery() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const row1 = IMAGES.slice(0, 6);
+  const row2 = IMAGES.slice(6);
+
   return (
-    <section className="gallery section py-12 bg-white" aria-labelledby="gallery-title">
-      <div className="container max-w-6xl mx-auto px-6">
-        <h2 id="gallery-title" className="text-2xl md:text-3xl font-bold mb-8">
-          Gallery
-        </h2>
+    <section className="py-8 bg-white" aria-labelledby="gallery-title">
+      {/* Row 1 - scrolls left */}
+      <div className="mb-2">
+        <ScrollRow
+          images={row1}
+          indexOffset={0}
+          direction="left"
+          onImageClick={setOpenIndex}
+        />
+      </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {IMAGES.map((src, idx) => (
-            <button
-              key={src}
-              onClick={() => setOpenIndex(idx)}
-              className="block w-full h-40 md:h-48 overflow-hidden rounded-md focus:outline-none"
-              aria-label={`Open image ${idx + 1}`}
-            >
-              <img
-                src={src}
-                alt={`Gallery ${idx + 1}`}
-                className="w-full h-full object-cover transform hover:scale-105 transition"
-                loading="lazy"
-                width={400}
-                height={300}
-              />
-            </button>
-          ))}
-        </div>
+      {/* Row 2 - scrolls right */}
+      <div>
+        <ScrollRow
+          images={row2}
+          indexOffset={6}
+          direction="right"
+          onImageClick={setOpenIndex}
+        />
+      </div>
 
-        <div className="mt-8 text-center">
-          <button
-            onClick={() => setOpenIndex(0)}
-            className="inline-block px-6 py-3 bg-black text-white rounded-md"
-          >
-            View full screen
-          </button>
-        </div>
+      {/* View Full Screen Button */}
+      <div className="mt-8 text-center">
+        <button
+          onClick={() => setOpenIndex(0)}
+          className="inline-block px-8 py-3 bg-black text-white text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors"
+        >
+          View Full Screen
+        </button>
       </div>
 
       {/* Lightbox modal */}
       {openIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4"
           role="dialog"
           aria-modal="true"
           aria-label="Image lightbox"
         >
+          {/* Close */}
           <button
             onClick={() => setOpenIndex(null)}
-            className="absolute top-6 right-6 text-white text-2xl p-2"
+            className="absolute top-6 right-6 text-white text-3xl p-2 hover:opacity-70 transition z-10"
             aria-label="Close"
           >
             ✕
           </button>
 
+          {/* Image counter */}
+          <div className="absolute top-6 left-6 text-white/60 text-sm font-light tracking-wider">
+            {openIndex + 1} / {IMAGES.length}
+          </div>
+
+          {/* Previous */}
           <button
-            onClick={() => setOpenIndex((i) => (i === 0 ? IMAGES.length - 1 : (i ?? 0) - 1))}
-            className="absolute left-6 text-white text-3xl p-2"
+            onClick={() =>
+              setOpenIndex((i) =>
+                i === 0 ? IMAGES.length - 1 : (i ?? 0) - 1
+              )
+            }
+            className="absolute left-4 md:left-8 text-white text-5xl p-2 hover:opacity-70 transition"
             aria-label="Previous"
           >
             ‹
           </button>
 
-          <div className="max-w-5xl w-full max-h-[90vh]">
+          {/* Image */}
+          <div className="max-w-6xl w-full max-h-[90vh] flex items-center justify-center">
             <img
               src={IMAGES[openIndex]}
               alt={`Large gallery ${openIndex + 1}`}
-              className="w-full h-auto object-contain rounded"
+              className="max-w-full max-h-[85vh] object-contain"
             />
           </div>
 
+          {/* Next */}
           <button
             onClick={() =>
-              setOpenIndex((i) => (i === IMAGES.length - 1 ? 0 : ((i ?? 0) + 1)))
+              setOpenIndex((i) =>
+                i === IMAGES.length - 1 ? 0 : (i ?? 0) + 1
+              )
             }
-            className="absolute right-6 text-white text-3xl p-2"
+            className="absolute right-4 md:right-8 text-white text-5xl p-2 hover:opacity-70 transition"
             aria-label="Next"
           >
             ›
           </button>
+
+          {/* Thumbnail strip */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 max-w-[90vw] overflow-x-auto px-4"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {IMAGES.map((src, idx) => (
+              <button
+                key={src}
+                onClick={() => setOpenIndex(idx)}
+                className={`flex-shrink-0 w-16 h-12 overflow-hidden border-2 transition ${
+                  idx === openIndex ? "border-white" : "border-transparent opacity-50 hover:opacity-80"
+                }`}
+              >
+                <img src={src} alt="" className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </section>

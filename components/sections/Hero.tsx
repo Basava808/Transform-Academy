@@ -2,14 +2,11 @@
 export default function Hero() {
   return (
     <section className="relative h-screen flex items-center">
-      <video
-        autoPlay
-        loop
-        muted
+      <img
+        src="/images/transform-tennis/Hero 1.jpeg"
+        alt="Transform Tennis Academy"
         className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="https://www.mouratoglou.com/wp-content/uploads/2024/11/4df3e1c9-7baf-4af0-b600-c526326aff50-2SHOTSDRONELIGHT.mp4" />
-      </video>
+      />
 
       <div className="absolute inset-0 bg-black/60" />
 

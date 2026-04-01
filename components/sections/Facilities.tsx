@@ -6,13 +6,13 @@ export default function Facilities() {
       name: "Transform Tennis Academy, Bommanahalli",
       courts: "8 Clay courts",
       address: "16th Cross, 13th Main, Virat Nagar, Bommanahalli, Bengaluru – 560068",
-      image: "https://images.unsplash.com/photo-1595435742656-3272d1a38a77?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Facility Bommanahalli 1.jpeg"
     },
     {
       name: "Transform Tennis Academy, Hennur",
       courts: "6 Clay courts with flood lights",
       address: "Ashwath Katte Road Bileshivale Dodda Gubbi, Post, Bengaluru, Karnataka 560077",
-      image: "https://images.unsplash.com/photo-1505553556485-ecbc8514e82d?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Facility Hennur 3.jpeg"
     }
   ];
 

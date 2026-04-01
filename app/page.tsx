@@ -7,6 +7,7 @@ import Programs from "../components/sections/Programs";
 import Accomplishments from "../components/sections/Accomplishments";
 import Facilities from "../components/sections/Facilities";
 import Contact from "../components/sections/Contact";
+import ImageGallery from "../components/sections/ImageGallery";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Anchors />
+      <ImageGallery />
       <About />
       <Philosophy />
       <Programs />

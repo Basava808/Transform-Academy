@@ -4,27 +4,27 @@ export default function Programs() {
       title: "Kids Program",
       subtitle: "Ages 5–10",
       description: "A fun and engaging introduction to tennis focusing on coordination, movement, and basic strokes.",
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Program 1.jpeg"
     },
     {
       title: "Beginner Program",
       description: "Ideal for players starting their tennis journey with focus on technique and basic gameplay.",
-      image: "https://images.unsplash.com/photo-1542144582-1ba00446b5ce?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Program 2.jpeg"
     },
     {
       title: "Intermediate Program",
       description: "For players looking to refine their skills, improve consistency, and develop match strategy.",
-      image: "https://images.unsplash.com/photo-1558223681-306915f0133c?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Program 3.jpeg"
     },
     {
       title: "Adult Program",
       description: "A program designed for adult players of all skill levels, whether you are learning tennis for the first time or returning.",
-      image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Program 4.jpeg"
     },
     {
       title: "Advanced / Competitive",
       description: "High-performance training for players preparing for tournaments and competitive tennis.",
-      image: "https://images.unsplash.com/photo-1530915365347-2cb8bd7269e5?q=80&w=800&auto=format&fit=crop"
+      image: "/images/transform-tennis/Program 5.jpeg"
     }
   ];
 

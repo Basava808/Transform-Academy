@@ -7,17 +7,17 @@ const camps = [
   {
     title: "Youth Tennis Camp | Week (Mornings)",
     tags: ["From age 6", "Week", "Morning"],
-    image: "/images/camp1.jpg",
+    image: "/images/transform-tennis/Camp 1.jpeg",
   },
   {
     title: "Youth Intensive Camp | Full Days",
     tags: ["From age 10", "Week", "Full Days"],
-    image: "/images/camp2.jpg",
+    image: "/images/transform-tennis/Camp 2.jpeg",
   },
   {
     title: "Adults Tennis Camp | Mornings",
     tags: ["Adults", "Week"],
-    image: "/images/camp3.jpg",
+    image: "/images/transform-tennis/Camp 3.jpeg",
   },
 ];
 

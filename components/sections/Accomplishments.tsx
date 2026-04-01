@@ -99,7 +99,7 @@ export default function Accomplishments() {
         <div className="mt-16 max-w-4xl mx-auto bg-black text-white p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
           <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
             {/* Optional Placeholder for Gandharv Photo */}
-            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=400&h=400&auto=format&fit=crop" alt="Gandharv Kothapalli" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+            <img src="/images/transform-tennis/Accomplishment 1.jpeg" alt="Gandharv Kothapalli" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
           </div>
           <div>
             <div className="inline-block px-4 py-1.5 bg-white text-black text-xs font-bold tracking-widest uppercase mb-4">
