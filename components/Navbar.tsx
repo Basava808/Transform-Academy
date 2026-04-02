@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* Replace text with a logo layout similar to image */}
         <div className="flex items-center space-x-2 lg:w-1/4">
           <div className="text-xl md:text-xl font-bold tracking-tighter text-black uppercase leading-none">
-            Transform<br/><span className="text-xs tracking-widest text-gray-500 font-light">Academy</span>
+            Transform Tennis<br/><span className="text-xs tracking-widest text-gray-500 font-light">Academy</span>
           </div>
         </div>
 

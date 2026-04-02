@@ -37,17 +37,26 @@ export default function Accomplishments() {
                 <Medal className="w-6 h-6 mr-3" /> National Champions
               </h4>
               <ul className="space-y-4 font-normal text-gray-800">
-                <li className="flex flex-col border-b border-gray-100 pb-3">
-                  <span className="font-bold text-black">Gandharv Kothapalli</span>
-                  <span className="text-sm font-light text-gray-600">Boys U18 Nationals Winner</span>
+                <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
+                  <img src="/images/transform-tennis/Accomplishment 1.jpeg" alt="Gandharv Kothapalli" className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200" />
+                  <div className="flex flex-col">
+                    <span className="font-bold text-black">Gandharv Kothapalli</span>
+                    <span className="text-sm font-light text-gray-600">Boys U18 Nationals Winner</span>
+                  </div>
                 </li>
-                <li className="flex flex-col border-b border-gray-100 pb-3">
-                  <span className="font-bold text-black">Harshini Nagaraj</span>
-                  <span className="text-sm font-light text-gray-600">Girls U18 Nationals Winner</span>
+                <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
+                  <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 border-2 border-gray-200 text-gray-500 font-bold text-lg">HN</div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-black">Harshini Nagaraj</span>
+                    <span className="text-sm font-light text-gray-600">Girls U18 Nationals Winner</span>
+                  </div>
                 </li>
-                <li className="flex flex-col pt-1">
-                  <span className="font-bold text-black">Snigdha Kanta</span>
-                  <span className="text-sm font-light text-gray-600">Girls U18 Nationals Runner-Up</span>
+                <li className="flex items-center gap-4 pt-1">
+                  <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 border-2 border-gray-200 text-gray-500 font-bold text-lg">SK</div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-black">Snigdha Kanta</span>
+                    <span className="text-sm font-light text-gray-600">Girls U18 Nationals Runner-Up</span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -95,25 +104,6 @@ export default function Accomplishments() {
           </div>
         </div>
 
-        {/* Featured Player Component Example */}
-        <div className="mt-16 max-w-4xl mx-auto bg-black text-white p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
-          <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-            {/* Optional Placeholder for Gandharv Photo */}
-            <img src="/images/transform-tennis/Accomplishment 1.jpeg" alt="Gandharv Kothapalli" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-          </div>
-          <div>
-            <div className="inline-block px-4 py-1.5 bg-white text-black text-xs font-bold tracking-widest uppercase mb-4">
-              Women's National Ranking
-            </div>
-            <h3 className="text-3xl md:text-4xl font-black mb-2 tracking-tight uppercase">Harshini Nagaraj</h3>
-            <p className="text-xl text-gray-300 mb-6 font-light">
-              Winner – ₹2.5 Lakh National Ranking Tournament
-            </p>
-            <p className="text-gray-400 font-light leading-relaxed">
-              These accomplishments reflect the commitment, discipline, and excellence that define the training philosophy at Transform Tennis Academy.
-            </p>
-          </div>
-        </div>
 
       </div>
     </section>

@@ -16,8 +16,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Anchors />
-      <ImageGallery />
       <About />
+      <ImageGallery />
       <Philosophy />
       <Programs />
       <Accomplishments />
