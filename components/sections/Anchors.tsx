@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 const links = [
   { id: "about", label: "Environment" },
@@ -13,6 +13,24 @@ const links = [
 
 export default function Anchors() {
   const [active, setActive] = useState<string>("about");
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const tabRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+
+  // Auto-scroll the active tab into view on mobile
+  useEffect(() => {
+    const activeTab = tabRefs.current[active];
+    if (activeTab && scrollRef.current) {
+      const container = scrollRef.current;
+      const tabLeft = activeTab.offsetLeft;
+      const tabWidth = activeTab.offsetWidth;
+      const containerWidth = container.offsetWidth;
+      // Center the active tab in the scrollable area
+      container.scrollTo({
+        left: tabLeft - containerWidth / 2 + tabWidth / 2,
+        behavior: "smooth",
+      });
+    }
+  }, [active]);
 
   useEffect(() => {
     const sections = links.map(link =>
@@ -28,9 +46,9 @@ export default function Anchors() {
         });
       },
       {
-        // Viewport center triggers changes
-        rootMargin: "-20% 0px -40% 0px",
-        threshold: 0,
+        // Tighter margins for mobile viewports
+        rootMargin: "-10% 0px -30% 0px",
+        threshold: 0.1,
       }
     );
 
@@ -45,14 +63,28 @@ export default function Anchors() {
     };
   }, []);
 
+  const handleClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
+
   return (
     <nav className="sticky top-0 z-40 bg-white border-b border-gray-200 w-full">
-      <div className="max-w-7xl mx-auto flex justify-center gap-0 overflow-x-auto px-6 py-2 no-scrollbar">
+      <div
+        ref={scrollRef}
+        className="max-w-7xl mx-auto flex lg:justify-center gap-0 overflow-x-auto px-2 md:px-6 py-2 no-scrollbar"
+        style={{ WebkitOverflowScrolling: "touch" }}
+      >
         {links.map(link => (
           <a
             key={link.id}
+            ref={(el) => { tabRefs.current[link.id] = el; }}
             href={`#${link.id}`}
-            className={`uppercase text-xs font-bold tracking-widest whitespace-nowrap px-4 py-3 transition-colors ${
+            onClick={(e) => handleClick(e, link.id)}
+            className={`uppercase text-[10px] md:text-xs font-bold tracking-widest whitespace-nowrap px-3 md:px-4 py-3 transition-colors flex-shrink-0 ${
               active === link.id
                 ? "bg-black text-white"
                 : "text-gray-800 hover:text-black hover:bg-gray-100 bg-transparent"
