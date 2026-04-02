@@ -42,15 +42,15 @@ export default function Programs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="group overflow-hidden bg-surface transition-all duration-300 hover:bg-white hover:text-black shadow-xl border border-white/5"
             >
               <div className="h-64 overflow-hidden relative">
-                <img 
-                  src={program.image} 
-                  alt={program.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                <img
+                  src={program.image}
+                  alt={program.title}
+                  className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-8">
