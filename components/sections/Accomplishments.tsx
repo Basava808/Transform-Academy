@@ -50,7 +50,7 @@ export default function Accomplishments() {
                   />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Gandharv Kothapalli</span>
-                    <span className="text-sm font-light text-gray-600">Boys U18 Nationals Winner</span>
+                    <span className="text-sm font-light text-gray-600">MCC Clay court U18 Nationals 2025 - Winner</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
@@ -62,7 +62,7 @@ export default function Accomplishments() {
                   />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Puneet M</span>
-                    <span className="text-sm font-light text-gray-600">Boys U14 National Champion</span>
+                    <span className="text-sm font-light text-gray-600">MSLTA Nationals 2024 U12 - Winner</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
@@ -74,7 +74,7 @@ export default function Accomplishments() {
                   />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Harshini Nagaraj</span>
-                    <span className="text-sm font-light text-gray-600">Girls U18 Nationals Winner</span>
+                    <span className="text-sm font-light text-gray-600">Fenesta Nationals 2025 U18 - Winner</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-4 pt-1">
@@ -86,7 +86,8 @@ export default function Accomplishments() {
                   />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Snigdha Kanta</span>
-                    <span className="text-sm font-light text-gray-600">Girls U18 Nationals Runner-Up</span>
+                    <span className="text-sm font-light text-gray-600">Clay court Nationals 2025 U16 - Winner</span>
+                    <span className="text-sm font-light text-gray-600">Fenesta Nationals 2025 U18 - Runner-up</span>
                   </div>
                 </li>
               </ul>
