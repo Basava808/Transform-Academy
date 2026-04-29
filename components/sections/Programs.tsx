@@ -4,17 +4,17 @@ export default function Programs() {
       title: "Kids Program",
       subtitle: "Ages 5–10",
       description: "A fun and engaging introduction to tennis focusing on coordination, movement, and basic strokes.",
-      image: "/images/transform-tennis/Program 1.jpeg"
+      image: "/images/transform-tennis/new-program-1.jpg"
     },
     {
       title: "Beginner Program",
       description: "Ideal for players starting their tennis journey with focus on technique and basic gameplay.",
-      image: "/images/transform-tennis/Program 2.jpeg"
+      image: "/images/transform-tennis/new-program-3.jpg"
     },
     {
       title: "Intermediate Program",
       description: "For players looking to refine their skills, improve consistency, and develop match strategy.",
-      image: "/images/transform-tennis/Program 3.jpeg"
+      image: "/images/transform-tennis/new-program-3-v2.jpg"
     },
     {
       title: "Adult Program",
@@ -50,7 +50,7 @@ export default function Programs() {
                 <img
                   src={program.image}
                   alt={program.title}
-                  className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-8">

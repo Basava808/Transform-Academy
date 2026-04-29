@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import { Trophy, Medal, Star } from "lucide-react";
 
 export default function Accomplishments() {
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
   return (
     <section id="accomplishments" className="py-32 px-6 md:px-12 bg-white text-black">
       <div className="max-w-7xl mx-auto">
@@ -38,21 +42,48 @@ export default function Accomplishments() {
               </h4>
               <ul className="space-y-4 font-normal text-gray-800">
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
-                  <img src="/images/transform-tennis/Accomplishment 1.jpeg" alt="Gandharv Kothapalli" className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200" />
+                  <img 
+                    src="/images/transform-tennis/champ-gandharv.jpg" 
+                    alt="Gandharv Kothapalli" 
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                    onClick={() => setPreviewImage("/images/transform-tennis/champ-gandharv.jpg")}
+                  />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Gandharv Kothapalli</span>
                     <span className="text-sm font-light text-gray-600">Boys U18 Nationals Winner</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
-                  <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 border-2 border-gray-200 text-gray-500 font-bold text-lg">HN</div>
+                  <img 
+                    src="/images/transform-tennis/champ-puneet-v2.jpg" 
+                    alt="Puneet M" 
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                    onClick={() => setPreviewImage("/images/transform-tennis/champ-puneet-v2.jpg")}
+                  />
+                  <div className="flex flex-col">
+                    <span className="font-bold text-black">Puneet M</span>
+                    <span className="text-sm font-light text-gray-600">Boys U14 National Champion</span>
+                  </div>
+                </li>
+                <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
+                  <img 
+                    src="/images/transform-tennis/champ-harshini.jpg" 
+                    alt="Harshini Nagaraj" 
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                    onClick={() => setPreviewImage("/images/transform-tennis/champ-harshini.jpg")}
+                  />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Harshini Nagaraj</span>
                     <span className="text-sm font-light text-gray-600">Girls U18 Nationals Winner</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-4 pt-1">
-                  <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 border-2 border-gray-200 text-gray-500 font-bold text-lg">SK</div>
+                  <img 
+                    src="/images/transform-tennis/champ-snigdha.jpg" 
+                    alt="Snigdha Kanta" 
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                    onClick={() => setPreviewImage("/images/transform-tennis/champ-snigdha.jpg")}
+                  />
                   <div className="flex flex-col">
                     <span className="font-bold text-black">Snigdha Kanta</span>
                     <span className="text-sm font-light text-gray-600">Girls U18 Nationals Runner-Up</span>
@@ -106,6 +137,30 @@ export default function Accomplishments() {
 
 
       </div>
+
+      {/* Lightbox Modal */}
+      {previewImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            onClick={() => setPreviewImage(null)}
+            className="absolute top-6 right-6 text-white text-3xl p-2 hover:opacity-70 transition z-10"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <div className="max-w-4xl w-full max-h-[90vh] flex items-center justify-center relative">
+            <img
+              src={previewImage}
+              alt="Preview"
+              className="max-w-full max-h-[85vh] object-contain rounded-sm"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
