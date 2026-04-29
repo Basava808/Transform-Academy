@@ -32,8 +32,8 @@ export default function Accomplishments() {
 
         {/* Highlights 2025 */}
         <div className="mb-24">
-          <h3 className="text-3xl font-black mb-12 text-center border-b border-gray-300 pb-6 uppercase tracking-tight">Highlights – 2025</h3>
-          
+          <h3 className="text-3xl font-black mb-12 text-center border-b border-gray-300 pb-6 uppercase tracking-tight">Highlights</h3>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* National Champions */}
             <div className="bg-white p-8 border border-gray-200 shadow-sm border-t-4 border-t-black">
@@ -42,10 +42,10 @@ export default function Accomplishments() {
               </h4>
               <ul className="space-y-4 font-normal text-gray-800">
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
-                  <img 
-                    src="/images/transform-tennis/champ-gandharv.jpg" 
-                    alt="Gandharv Kothapalli" 
-                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                  <img
+                    src="/images/transform-tennis/champ-gandharv.jpg"
+                    alt="Gandharv Kothapalli"
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition"
                     onClick={() => setPreviewImage("/images/transform-tennis/champ-gandharv.jpg")}
                   />
                   <div className="flex flex-col">
@@ -54,10 +54,10 @@ export default function Accomplishments() {
                   </div>
                 </li>
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
-                  <img 
-                    src="/images/transform-tennis/champ-puneet-v2.jpg" 
-                    alt="Puneet M" 
-                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                  <img
+                    src="/images/transform-tennis/champ-puneet-v2.jpg"
+                    alt="Puneet M"
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition"
                     onClick={() => setPreviewImage("/images/transform-tennis/champ-puneet-v2.jpg")}
                   />
                   <div className="flex flex-col">
@@ -66,10 +66,10 @@ export default function Accomplishments() {
                   </div>
                 </li>
                 <li className="flex items-center gap-4 border-b border-gray-100 pb-3">
-                  <img 
-                    src="/images/transform-tennis/champ-harshini.jpg" 
-                    alt="Harshini Nagaraj" 
-                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                  <img
+                    src="/images/transform-tennis/champ-harshini.jpg"
+                    alt="Harshini Nagaraj"
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition"
                     onClick={() => setPreviewImage("/images/transform-tennis/champ-harshini.jpg")}
                   />
                   <div className="flex flex-col">
@@ -78,10 +78,10 @@ export default function Accomplishments() {
                   </div>
                 </li>
                 <li className="flex items-center gap-4 pt-1">
-                  <img 
-                    src="/images/transform-tennis/champ-snigdha.jpg" 
-                    alt="Snigdha Kanta" 
-                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition" 
+                  <img
+                    src="/images/transform-tennis/champ-snigdha.jpg"
+                    alt="Snigdha Kanta"
+                    className="w-14 h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 cursor-pointer hover:opacity-80 transition"
                     onClick={() => setPreviewImage("/images/transform-tennis/champ-snigdha.jpg")}
                   />
                   <div className="flex flex-col">
@@ -103,7 +103,7 @@ export default function Accomplishments() {
                 <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Arjun Manikandan</span> <span className="text-orange-600 font-bold">No.3 (U14)</span></li>
                 <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Jahnavi Tammineedi</span> <span className="text-orange-600 font-bold">No.7 (U14)</span></li>
                 <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Aradhya Kshitij</span> <span className="text-orange-600 font-bold">No.2 (U18)</span></li>
-                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Snigdha Kanta</span> <span className="text-orange-600 font-bold">No.5 (U18)</span></li>
+                <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Snigdha Kanta</span> <span className="text-orange-600 font-bold">No.3 (U18)</span></li>
                 <li className="flex justify-between items-center bg-gray-50 p-3"><span className="text-black font-semibold">Harshini Nagaraj</span> <span className="text-orange-600 font-bold">No.8 (U18)</span></li>
               </ul>
             </div>
