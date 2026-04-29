@@ -23,9 +23,10 @@ export default function Navbar() {
     <>
       <header className="absolute top-0 w-full z-50 bg-white border-b border-gray-200 px-6 py-6 flex justify-between items-center h-[80px]">
         {/* Replace text with a logo layout similar to image */}
-        <div className="flex items-center space-x-2 lg:w-1/4">
-          <div className="text-xl md:text-xl font-bold tracking-tighter text-black uppercase leading-none">
-            Transform Tennis<br/><span className="text-xs tracking-widest text-gray-500 font-light">Academy</span>
+        <div className="flex items-center space-x-3 lg:w-1/4">
+          <img src="/images/logo.png" alt="Logo" className="h-10 md:h-12 w-auto object-contain" />
+          <div className="text-lg md:text-xl font-bold tracking-tighter text-black uppercase leading-none">
+            Transform Tennis<br/><span className="text-[10px] md:text-xs tracking-widest text-gray-500 font-light">Academy</span>
           </div>
         </div>
 

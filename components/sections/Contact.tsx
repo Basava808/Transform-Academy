@@ -8,15 +8,15 @@ const LOCATIONS = [
     id: "bommanahalli",
     name: "Bommanahalli Branch",
     address: "16th Cross, 13th Main, Virat Nagar, Bommanahalli, Bengaluru – 560068",
-    phone: "73494 43332",
-    email: "bommanahalli@transformtennis.in",
+    phone: "7349443332",
+    email: "Ttabmh@gmail.com",
   },
   {
     id: "hennur",
     name: "Hennur Branch",
     address: "Ashwath Katte Road Bileshivale Dodda Gubbi, Post, Bengaluru, Karnataka 560077",
-    phone: "99009 47708",
-    email: "hennur@transformtennis.in",
+    phone: "9900947708",
+    email: "Ttahennur@gmail.com",
   },
 ];
 

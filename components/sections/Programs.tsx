@@ -19,7 +19,7 @@ export default function Programs() {
     {
       title: "Adult Program",
       description: "A program designed for adult players of all skill levels, whether you are learning tennis for the first time or returning.",
-      image: "/images/transform-tennis/Program 4.jpeg"
+      image: "/images/transform-tennis/current-batch.jpg"
     },
     {
       title: "Advanced / Competitive",
@@ -50,7 +50,7 @@ export default function Programs() {
                 <img
                   src={program.image}
                   alt={program.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-8">
