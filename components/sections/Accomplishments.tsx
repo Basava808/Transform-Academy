@@ -94,7 +94,7 @@ export default function Accomplishments() {
             </div>
 
             {/* National Rankings */}
-            <div className="bg-white p-8 border border-gray-200 shadow-sm border-t-4 border-t-black max-h-[400px] overflow-y-auto custom-scrollbar">
+            <div className="bg-white p-8 border border-gray-200 shadow-sm border-t-4 border-t-black overflow-y-auto custom-scrollbar">
               <h4 className="text-xl font-bold mb-6 flex items-center text-black uppercase tracking-wide">
                 <Star className="w-6 h-6 mr-3" /> National Rankings
               </h4>
