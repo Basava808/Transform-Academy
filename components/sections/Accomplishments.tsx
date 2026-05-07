@@ -14,7 +14,7 @@ export default function Accomplishments() {
             PLAYER ACCOMPLISHMENTS
           </h2>
           <p className="text-xl max-w-3xl mx-auto font-light leading-relaxed text-gray-800">
-            Over the years, Transform Tennis Academy (TTA) has produced some of the most promising tennis players in the country. Our structured training programs and competitive environment have helped players achieve success at national and international levels we currently have.
+            Over the years, Transform Tennis Academy (TTA) has produced some of the most promising tennis players in the country. Our structured training programs and competitive environment have helped players achieve success at national and international levels. We currently have-
           </p>
         </div>
 
