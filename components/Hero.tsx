@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 
 // All hero images for mobile single-image carousel
 const ALL_IMAGES = [
+  "/images/transform-tennis/puneeth-hero.jpg",
   "/images/transform-tennis/Gallery alt 3.jpeg",
   "/images/transform-tennis/Gallery alt 6.jpeg",
   "/images/transform-tennis/Camp 1.jpeg",
@@ -22,13 +23,17 @@ const ALL_IMAGES = [
   "/images/transform-tennis/Hero 15.jpeg",
 ];
 
-// Desktop collage frames: portrait (3 in a row), landscape (2x2 grid)
+// Desktop collage frames: portrait (3 in a row), landscape (2x2 grid), single (full width)
 interface HeroFrame {
-  type: "portrait" | "landscape";
+  type: "single" | "portrait" | "landscape";
   images: string[];
 }
 
 const HERO_FRAMES: HeroFrame[] = [
+  {
+    type: "single",
+    images: ["/images/transform-tennis/puneeth-hero.jpg"],
+  },
   {
     type: "landscape",
     images: [
@@ -115,7 +120,7 @@ export default function Hero() {
       } else {
         setActiveFrame((prev) => (prev + 1) % HERO_FRAMES.length);
       }
-    }, isMobile ? 3000 : 5000);
+    }, 4500); // 4.5 seconds
     return () => clearInterval(interval);
   }, [isMobile]);
 
@@ -137,14 +142,14 @@ export default function Hero() {
             <img
               src={src}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl"
+              className="absolute inset-0 w-full h-full object-fill scale-110 blur-xl"
               aria-hidden="true"
             />
             {/* Foreground contained image */}
             <img
               src={src}
               alt={`Tennis academy ${idx + 1}`}
-              className="absolute inset-0 w-full h-full object-contain z-[1]"
+              className="absolute inset-0 w-full h-full object-fill z-[1]"
               loading={idx === 0 ? "eager" : "lazy"}
             />
           </div>
@@ -158,7 +163,9 @@ export default function Hero() {
             key={frameIdx}
             className={`absolute inset-0 ${frame.type === "portrait"
               ? "flex flex-row gap-[2px]"
-              : "grid grid-cols-2 grid-rows-2 gap-[2px]"
+              : frame.type === "single"
+                ? "flex w-full h-full"
+                : "grid grid-cols-2 grid-rows-2 gap-[2px]"
               }`}
             style={{
               opacity: frameIdx === activeFrame ? 1 : 0,
@@ -170,7 +177,7 @@ export default function Hero() {
               <div
                 key={imgIdx}
                 className={`relative overflow-hidden ${frame.type === "portrait" ? "flex-1" : ""
-                  }`}
+                  } ${frame.type === "single" ? "w-full h-full" : ""}`}
               >
                 <img
                   src={src}
